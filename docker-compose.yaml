@@ -1,0 +1,15 @@
+services:
+  server:
+    container_name: server
+    build:
+      context: server
+    ports:
+      - 3000:3000
+  client:
+    container_name: client
+    build:
+      context: client
+    ports:
+      - 10000:10000
+    depends_on:
+      - server
